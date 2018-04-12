@@ -62,7 +62,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[11.749381468,-131.041080707],[75.6229484653,-51.3647200968]]);
+        }).fitBounds([[46.352553714,-123.25916961],[48.3486026827,-120.76928334]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         L.control.locate().addTo(map);
@@ -92,7 +92,7 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
+                        <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OID'] !== null ? Autolinker.link(String(feature.properties['OID'])) : '') + '</td>\
@@ -125,7 +125,7 @@
                         <td colspan="2">' + (feature.properties['2016_US_pr'] !== null ? Autolinker.link(String(feature.properties['2016_US_pr'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Size'] !== null ? Autolinker.link(String(feature.properties['Size'])) : '') + '</td>\
+                        <td colspan="2"><strong>Size</strong><br />' + (feature.properties['Size'] !== null ? Autolinker.link(String(feature.properties['Size'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -232,7 +232,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(133,60,0,1.0)',
+                fillColor: 'rgba(134,80,0,1.0)',
             }
         }
         map.createPane('pane_60000Barrels_1');
@@ -321,7 +321,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(189,120,55,1.0)',
+                fillColor: 'rgba(198,128,70,1.0)',
             }
         }
         map.createPane('pane_3000060000Barrels_2');
@@ -410,7 +410,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(233,190,134,1.0)',
+                fillColor: 'rgba(223,183,115,1.0)',
             }
         }
         map.createPane('pane_1500030000Barrels_3');
@@ -499,7 +499,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,94,126,1.0)',
+                fillColor: 'rgba(0,89,130,1.0)',
             }
         }
         map.createPane('pane_1000015000Barrels_4');
