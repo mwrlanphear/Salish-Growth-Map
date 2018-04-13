@@ -63,7 +63,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-0.417091454049,-131.009753827],[63.4564755433,-51.3333932171]]);
+        }).fitBounds([[44.2577130278,-94.1813147465],[45.2557375122,-92.9363716119]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         L.control.locate().addTo(map);
@@ -233,7 +233,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(194,22,0,1.0)',
+                fillColor: 'rgba(144,14,0,1.0)',
             }
         }
         map.createPane('pane_60000bblyear_1');
@@ -322,7 +322,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,88,63,1.0)',
+                fillColor: 'rgba(255,90,65,1.0)',
             }
         }
         map.createPane('pane_3000060000bblyear_2');
@@ -411,7 +411,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(253,206,202,1.0)',
+                fillColor: 'rgba(255,175,167,1.0)',
             }
         }
         map.createPane('pane_1500030000bblyear_3');
@@ -767,7 +767,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(63,145,13,1.0)',
+                fillColor: 'rgba(14,140,0,1.0)',
             }
         }
         map.createPane('pane_10002500bblyear_7');
@@ -856,7 +856,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(205,228,190,1.0)',
+                fillColor: 'rgba(111,235,102,1.0)',
             }
         }
         map.createPane('pane_01000bblyear_8');
@@ -942,7 +942,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(204,204,204,1.0)',
+                fillColor: 'rgba(212,212,212,1.0)',
             }
         }
         map.createPane('pane_DoNotPublish_9');
@@ -969,7 +969,7 @@
         });
         osmGeocoder.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/DoNotPublish_9.png" /> Do Not Publish': layer_DoNotPublish_9,'<img src="legend/01000bblyear_8.png" /> 0-1,000 bbl/year': layer_01000bblyear_8,'<img src="legend/10002500bblyear_7.png" /> 1,000-2,500 bblyear': layer_10002500bblyear_7,'<img src="legend/25005000bblyear_6.png" /> 2,500-5,000 bbl/year': layer_25005000bblyear_6,'<img src="legend/500010000bblyear_5.png" /> 5,000-10,000 bbl/year': layer_500010000bblyear_5,'<img src="legend/1000015000bblyear_4.png" /> 10,000-15,000 bbl/year': layer_1000015000bblyear_4,'<img src="legend/1500030000bblyear_3.png" /> 15,000-30,000 bbl/year': layer_1500030000bblyear_3,'<img src="legend/3000060000bblyear_2.png" /> 30,000-60,000 bbl/year': layer_3000060000bblyear_2,'<img src="legend/60000bblyear_1.png" /> 60,000+ bbl/year': layer_60000bblyear_1,'<img src="legend/AllUSBreweries_0.png" /> All US Breweries': layer_AllUSBreweries_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/DoNotPublish_9.png" /> Do Not Publish': layer_DoNotPublish_9,'<img src="legend/01000bblyear_8.png" /> 0-1,000 bbl/year': layer_01000bblyear_8,'<img src="legend/10002500bblyear_7.png" /> 1,000-2,500 bblyear': layer_10002500bblyear_7,'<img src="legend/25005000bblyear_6.png" /> 2,500-5,000 bbl/year': layer_25005000bblyear_6,'<img src="legend/500010000bblyear_5.png" /> 5,000-10,000 bbl/year': layer_500010000bblyear_5,'<img src="legend/1000015000bblyear_4.png" /> 10,000-15,000 bbl/year': layer_1000015000bblyear_4,'<img src="legend/1500030000bblyear_3.png" /> 15,000-30,000 bbl/year': layer_1500030000bblyear_3,'<img src="legend/3000060000bblyear_2.png" /> 30,000-60,000 bbl/year': layer_3000060000bblyear_2,'<img src="legend/60000bblyear_1.png" /> 60,000+ bbl/year': layer_60000bblyear_1,'<img src="legend/AllUSBreweries_0.png" /> All US Breweries': layer_AllUSBreweries_0,},{collapsed:false}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
             layer: layer_AllUSBreweries_0,
