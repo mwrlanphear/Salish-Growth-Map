@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="http://unpkg.com/leaflet@1.0.3/dist/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
         <style>
@@ -23,7 +23,7 @@
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="http://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -43,16 +43,10 @@
         <script src="data/01000bblyear_8.js"></script>
         <script src="data/DoNotPublish_9.js"></script>
         <script src="data/AllUSBreweries_10.js"></script>
-        <script src="data/ALLUSBREW_11.js"></script>
         <script>
-        var highlightLayer;
-        function highlightFeature(e) {
-            highlightLayer = e.target;
-            highlightLayer.openPopup();
-        }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[41.4467027372,-88.3893804579],[42.1697804076,-86.6895537813]]);
+        }).fitBounds([[37.1898363105,-108.392929275],[38.71957133,-104.993275921]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         L.control.locate().addTo(map);
@@ -65,18 +59,6 @@
         function setBounds() {
         }
         function pop_CountyDemographics_0(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>Population in 2017</strong><br />' + (feature.properties['Population in 2017'] !== null ? Autolinker.link(String(feature.properties['Population in 2017'])) : '') + '</td>\
@@ -120,18 +102,6 @@
         bounds_group.addLayer(layer_CountyDemographics_0);
         map.addLayer(layer_CountyDemographics_0);
         function pop_60000bblyear_1(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -206,18 +176,6 @@
         bounds_group.addLayer(layer_60000bblyear_1);
         map.addLayer(layer_60000bblyear_1);
         function pop_3000060000bblyear_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -292,18 +250,6 @@
         bounds_group.addLayer(layer_3000060000bblyear_2);
         map.addLayer(layer_3000060000bblyear_2);
         function pop_1500030000bblyear_3(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -378,18 +324,6 @@
         bounds_group.addLayer(layer_1500030000bblyear_3);
         map.addLayer(layer_1500030000bblyear_3);
         function pop_1000015000bblyear_4(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -464,18 +398,6 @@
         bounds_group.addLayer(layer_1000015000bblyear_4);
         map.addLayer(layer_1000015000bblyear_4);
         function pop_500010000bblyear_5(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -550,18 +472,6 @@
         bounds_group.addLayer(layer_500010000bblyear_5);
         map.addLayer(layer_500010000bblyear_5);
         function pop_25005000bblyear_6(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -636,18 +546,6 @@
         bounds_group.addLayer(layer_25005000bblyear_6);
         map.addLayer(layer_25005000bblyear_6);
         function pop_10002500bblyear_7(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -722,18 +620,6 @@
         bounds_group.addLayer(layer_10002500bblyear_7);
         map.addLayer(layer_10002500bblyear_7);
         function pop_01000bblyear_8(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -808,18 +694,6 @@
         bounds_group.addLayer(layer_01000bblyear_8);
         map.addLayer(layer_01000bblyear_8);
         function pop_DoNotPublish_9(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -891,18 +765,6 @@
         bounds_group.addLayer(layer_DoNotPublish_9);
         map.addLayer(layer_DoNotPublish_9);
         function pop_AllUSBreweries_10(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>company</strong><br />' + (feature.properties['company'] !== null ? Autolinker.link(String(feature.properties['company'])) : '') + '</td>\
@@ -976,92 +838,6 @@
         });
         bounds_group.addLayer(layer_AllUSBreweries_10);
         map.addLayer(layer_AllUSBreweries_10);
-        function pop_ALLUSBREW_11(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Brewery'] !== null ? Autolinker.link(String(feature.properties['Brewery'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OID'] !== null ? Autolinker.link(String(feature.properties['OID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['address_1'] !== null ? Autolinker.link(String(feature.properties['address_1'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['address_2'] !== null ? Autolinker.link(String(feature.properties['address_2'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['CITY'] !== null ? Autolinker.link(String(feature.properties['CITY'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['state_prov'] !== null ? Autolinker.link(String(feature.properties['state_prov'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['zip'] !== null ? Autolinker.link(String(feature.properties['zip'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['lat'] !== null ? Autolinker.link(String(feature.properties['lat'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['lng'] !== null ? Autolinker.link(String(feature.properties['lng'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['country'] !== null ? Autolinker.link(String(feature.properties['country'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['2016_US_pr'] !== null ? Autolinker.link(String(feature.properties['2016_US_pr'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['2016 Barrel Production'] !== null ? Autolinker.link(String(feature.properties['2016 Barrel Production'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_ALLUSBREW_11_0() {
-            return {
-                pane: 'pane_ALLUSBREW_11',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(133,113,99,1.0)',
-            }
-        }
-        map.createPane('pane_ALLUSBREW_11');
-        map.getPane('pane_ALLUSBREW_11').style.zIndex = 411;
-        map.getPane('pane_ALLUSBREW_11').style['mix-blend-mode'] = 'normal';
-        var layer_ALLUSBREW_11 = new L.geoJson(json_ALLUSBREW_11, {
-            attribution: '<a href=""></a>',
-            pane: 'pane_ALLUSBREW_11',
-            onEachFeature: pop_ALLUSBREW_11,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_ALLUSBREW_11_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_ALLUSBREW_11);
-        map.addLayer(layer_ALLUSBREW_11);
         var osmGeocoder = new L.Control.OSMGeocoder({
             collapsed: false,
             position: 'topright',
@@ -1069,7 +845,7 @@
         });
         osmGeocoder.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/ALLUSBREW_11.png" /> ALL US BREW': layer_ALLUSBREW_11,'<img src="legend/AllUSBreweries_10.png" /> All US Breweries': layer_AllUSBreweries_10,'<img src="legend/DoNotPublish_9.png" /> Do Not Publish': layer_DoNotPublish_9,'<img src="legend/01000bblyear_8.png" /> 0-1,000 bbl/year': layer_01000bblyear_8,'<img src="legend/10002500bblyear_7.png" /> 1,000-2,500 bblyear': layer_10002500bblyear_7,'<img src="legend/25005000bblyear_6.png" /> 2,500-5,000 bbl/year': layer_25005000bblyear_6,'<img src="legend/500010000bblyear_5.png" /> 5,000-10,000 bbl/year': layer_500010000bblyear_5,'<img src="legend/1000015000bblyear_4.png" /> 10,000-15,000 bbl/year': layer_1000015000bblyear_4,'<img src="legend/1500030000bblyear_3.png" /> 15,000-30,000 bbl/year': layer_1500030000bblyear_3,'<img src="legend/3000060000bblyear_2.png" /> 30,000-60,000 bbl/year': layer_3000060000bblyear_2,'<img src="legend/60000bblyear_1.png" /> 60,000+ bbl/year': layer_60000bblyear_1,'<img src="legend/CountyDemographics_0.png" /> County Demographics': layer_CountyDemographics_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/AllUSBreweries_10.png" /> All US Breweries': layer_AllUSBreweries_10,'<img src="legend/DoNotPublish_9.png" /> Do Not Publish': layer_DoNotPublish_9,'<img src="legend/01000bblyear_8.png" /> 0-1,000 bbl/year': layer_01000bblyear_8,'<img src="legend/10002500bblyear_7.png" /> 1,000-2,500 bblyear': layer_10002500bblyear_7,'<img src="legend/25005000bblyear_6.png" /> 2,500-5,000 bbl/year': layer_25005000bblyear_6,'<img src="legend/500010000bblyear_5.png" /> 5,000-10,000 bbl/year': layer_500010000bblyear_5,'<img src="legend/1000015000bblyear_4.png" /> 10,000-15,000 bbl/year': layer_1000015000bblyear_4,'<img src="legend/1500030000bblyear_3.png" /> 15,000-30,000 bbl/year': layer_1500030000bblyear_3,'<img src="legend/3000060000bblyear_2.png" /> 30,000-60,000 bbl/year': layer_3000060000bblyear_2,'<img src="legend/60000bblyear_1.png" /> 60,000+ bbl/year': layer_60000bblyear_1,'<img src="legend/CountyDemographics_0.png" /> County Demographics': layer_CountyDemographics_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
